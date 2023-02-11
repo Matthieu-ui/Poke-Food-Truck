@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: lightblue;
+    font-family: black;
+}
+
+  
+
+header {
+    padding:0px 0;
+    width: 200px;
+   
+    
+}
+
+.card-container {
+    display: flex;
+    background-color: blue;
+}
+
+.card {
+    border: 5px solid black;
+    background-color: bisque;    
+    min-width: 150px;
+    min-height: 100px;
+    margin: 10px;
+}
