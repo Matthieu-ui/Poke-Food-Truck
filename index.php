@@ -12,8 +12,9 @@ Need to figure out
 [X] total func
 
 new TO DOO
-[] display nothing cart if no items
-[] only display item that is purchased
+[x] display nothing cart if no items
+[x] only display item that is purchased
+[] Include addons to subtotal
 []... ***add more here***
 
 
@@ -37,7 +38,7 @@ class Item
         $this->price = $price;
     }
 
-    public function addon($addon)
+    public function setAddon($addon)
     {
         foreach ($addon as $item) {
             $this->addon[] = $item;
@@ -175,17 +176,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //loop through menu items***
     for ($index = 0; $index < count($menuItems); $index++) {
         //if quantity is set***
-        if (isset($_POST['quantity-' . $index])) {
+        if (isset($_POST['quantity-' . $index])&& $_POST['quantity-' . $index] !=='') {
             //set quantity***
             $menuItems[$index]->setQuant($_POST['quantity-' . $index]);
             //if addon is set***
             if (isset($_POST['addon-' . $index])) {
                 //set addon***
-                $menuItems[$index]->addon($_POST['addon-' . $index]);
+                $menuItems[$index]->setAddon($_POST['addon-' . $index]);
             }
 
             //display cart items***
-            echo '<p>' .
+            echo '<p>Line 189:' .
                 $menuItems[$index]->name .
                 ' ($' .
                 $menuItems[$index]->price .
