@@ -21,7 +21,8 @@ header {
 
 .card-container {
     display: flex;
-    background-color: blue;
+    
+    width: 50%;
 }
 
 .card {
@@ -30,4 +31,15 @@ header {
     min-width: 150px;
     min-height: 100px;
     margin: 10px;
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: lightblue;
+
 }
