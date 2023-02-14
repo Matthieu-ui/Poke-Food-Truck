@@ -97,7 +97,7 @@ new TO DOO
                 </div>
 
                 <div>
-                <input type="checkbox" name="addon-<?= $key ?>[]" value="rice"<?php if (
+                <input type="checkbox" name="addon-<?= $key ?>[]" value="rice" <?php if (
     isset($_POST['addon-' . $key]) &&
     in_array('rice', $_POST['addon-' . $key])
 ) {
