@@ -6,6 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- <link rel="stylesheet" href="styles/styles.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Food Truck</title>
 </head>
 <body style="background-image: url('./img/waves.jpg');">
