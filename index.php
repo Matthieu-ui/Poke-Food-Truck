@@ -88,11 +88,10 @@ $menuItems[] = $items;
     
     <div class="mt-8 bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
         <h1 class="text-2xl text-blue-500">POKE TRUCK</h1>
-        <?php //grabs $menuItem array -> sets item
-        foreach ($menuItems as $key => $item) { ?>
+        <?php foreach ($menuItems as $key => $item) { ?>
         <div class="my-8">
             <div class="flex justify-between">
-            <h2 class=""><?= $item->name ?></h2>
+            <h2 class="text-lg text-pink-500"><?= $item->name ?></h2>
             <div>
                 <label class="">Quantity</label>
                 <!-- check if selected -->
@@ -137,7 +136,7 @@ $menuItems[] = $items;
                 </select>
             </div>
             </div>
-                <p class="my-2"><?= $item->description ?></p>
+                <p class="my-2 text-zinc-700"><?= $item->description ?></p>
             
 
             
@@ -145,8 +144,8 @@ $menuItems[] = $items;
                 <div class="flex justify-between">
 
                 
-                <label for="addon">Extras: </label>
-                <div class="w-5/6 ">
+                <label for="addon">Add-Ons:</label>
+                <div class="w-5/6 flex justify-around">
                 
                 <div>
                 <input type="checkbox" name="addon-<?= $key ?>[]" value="tuna" <?php if (
@@ -183,7 +182,7 @@ $menuItems[] = $items;
 
 
         <?php } ?>
-        <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"type="submit">Submit</button>
+        <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" type="submit">Submit</button>
     <!-- php self reset -->
     <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="reset"  onClick="window.location.href='<?php echo $_SERVER[
         'PHP_SELF'
@@ -254,50 +253,48 @@ $menuItems[] = $items;
         {
             // addons is array
             foreach ($this->items as $item) {
-                echo $item->quantity . ' ';
-                echo $item->name . ' $' . $item->price . '';
-                echo ' <br/> Add Ons: ';
-                // implode array (array to string) and add $1.50 to each
-                echo implode(', ', $item->addon) .
-                    ' $' .
-                    number_format(count($item->addon) * 1.5, 2);
-                // if no addon
-                if (empty($item->addon)) {
-                    echo ' None';
-                }
+            echo $item->quantity . ' ';
+            echo $item->name . ' $' . $item->price . '';
+            echo ' <br/> Add Ons: ';
+            // implode array (array to string) and add $1.50 to each
+            echo implode(', ', $item->addon) . ' $' . number_format(count($item->addon) * 1.50, 2) ;
+            // if no addon
+            if (empty($item->addon)) {
+                echo ' None';
+            }
 
-                echo '<br>';
+            echo '<br>';
             }
         }
 
         public function displaySubtotal()
         {
-            echo $this->subtotal();
+             $this->subtotal();
         }
     }
 
     //if cart is not empty display cart
-    if (!empty($cart)) {
-        echo '<h2>Cart</h2>';
-        $cart = new Cart($cart);
-        $cart->displayCart();
-        echo '<br>';
-        echo 'Subtotal: $';
-        $cart->displaySubtotal();
-        echo '<br>';
-        echo 'Tax: $';
-        echo $cart->tax();
-        echo '<br>';
-        echo 'Total: $';
-        echo $cart->total();
-    } else {
-        echo 'Your cart is empty!';
-    }
-    ?>
+  if (!empty($cart)) {
+    $cart = new Cart($cart);
+    echo '<div class="mt-8 bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">';
+    echo '<h2 class="">Cart</h2>';
+    $cart->displayCart();
+    echo '<br>';
+    echo 'Subtotal: $'. $cart->subtotal();
+    echo '<br>';
+    echo 'Tax: $';
+    echo $cart->tax();
+    echo '<br>';
+    echo 'Total: $';
+    echo $cart->total();
+    echo '</div>';
+} else {
+    echo '<div class="mt-8 bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">Your cart is empty!</div>';
+}
+?>
 
-    </body>
-
-    </html>
+</body>
+</html>
 
 
 
