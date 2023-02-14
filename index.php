@@ -89,6 +89,7 @@ $items = new Item(
     'Rosted Sweet Potato, Organic Tofu Cucumber, Sweet onion, Rosted Corn, Rosted Sesame Sauce, Edmame, Sesame Seeds',
     15.95
 );
+$menuItems[] = $items;
 
 ?>
 
