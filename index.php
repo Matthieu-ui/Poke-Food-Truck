@@ -26,11 +26,11 @@ new TO DOO
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     
     <div class="mt-8 bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-        <h1 class="text-2xl text-blue-500">POKE TRUCK</h1>
+        <h1 class="text-2xl text-blue-500">OKE POKE TRUCK</h1>
         <?php foreach ($menuItems as $key => $item) { ?>
         <div class="my-8">
             <div class="flex justify-between">
-            <h2 class="text-lg text-pink-500"><?= $item->name ?></h2>
+            <h2 class="text-lg text-pink-500"><?= $item->name ?> <span class="text-sm text-zinc-700"><?=$item->price?></span></h2>
             <div>
                 <label class="">Quantity</label>
                 <!-- check if selected -->
