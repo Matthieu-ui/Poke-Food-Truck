@@ -4,6 +4,7 @@ include 'classes/item.php';
 include 'classes/cart.php';
 include 'includes/data.php';
 include 'includes/header.php';
+include 'includes/footer.php';
 
 /*
 Need to figure out
