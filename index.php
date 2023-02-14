@@ -88,6 +88,7 @@ $items = new Item(
     'Evergreen Bowl',
     'Rosted Sweet Potato, Organic Tofu Cucumber, Sweet onion, Rosted Corn, Rosted Sesame Sauce, Edmame, Sesame Seeds',
     15.95
+);
 
 ?>
 
