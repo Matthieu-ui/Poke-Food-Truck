@@ -1,5 +1,8 @@
 <?php
 
+include 'classes/item.php';
+include 'classes/cart.php';
+include 'includes/data.php';
 include 'includes/header.php';
 
 /*
@@ -18,70 +21,6 @@ new TO DOO
 
 
 */
-
-//Class Item
-class Item
-{
-    public $ID = 0;
-    public $name = '';
-    public $description = '';
-    public $price = 0;
-    public $quantity = 0;
-    public $addon = [];
-
-    public function __construct($ID, $name, $description, $price)
-    {
-        $this->ID = $ID;
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-    }
-
-    public function setAddon($addon)
-    {
-        foreach ($addon as $item) {
-            $this->addon[] = $item;
-        }
-    }
-
-    public function setQuant($num)
-    {
-        $this->quantity = (int) $num;
-    }
-    public function getQuant()
-    {
-        return $this->quantity;
-    }
-}
-
-//save new instance to variable
-$items = new Item(
-    0,
-    'Spicy Ahi Bowl',
-    'Spicy Ahi Tuna, Cucumber, Sweet Onion, Scallion, House Shoyu
-Spicy Aioli, Masago ,Pickled Ginger',
-    12.95
-);
-// $item->addon('Tuna');
-// $item->addon('Rice');
-// $item->addon('Onions');
-$menuItems[] = $items;
-
-$items = new Item(
-    1,
-    'Hawaiian Classic Bowl',
-    'Ahi Tuna, Sweet Onion Hijiki (Seaweed), Scallion, House Shoyu Seaweed Salad, Sesame Seeds',
-    13.95
-);
-$menuItems[] = $items;
-
-$items = new Item(
-    2,
-    'Pike Place Bowl',
-    'Salmon, Sweet Onion, Cucumber, Sesame Seeds, House Shoyu, Edamame, Crunchy Onion',
-    14.95
-);
-$menuItems[] = $items;
 ?>
     
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
@@ -211,67 +150,7 @@ $menuItems[] = $items;
         } //end foreach
     }
 
-    class Cart
-    {
-        public $items = [];
-        public $addons = [];
-        public $subtotal = 0;
-        public $tax = 0;
-        public $total = 0;
-
-        public function __construct($items)
-        {
-            $this->items = $items;
-        }
-        public function setAddon($addon)
-        {
-            $this->addons = $addon;
-        }
-
-        public function subtotal()
-        {
-            foreach ($this->items as $item) {
-                $this->subtotal +=
-                    $item->price * $item->quantity + count($item->addon) * 1.5;
-            }
-            return number_format($this->subtotal, 2);
-        }
-
-        public function tax()
-        {
-            $this->tax = $this->subtotal * 0.1;
-            return number_format($this->tax, 2);
-        }
-
-        public function total()
-        {
-            $this->total = $this->subtotal + $this->tax;
-            return number_format($this->total, 2);
-        }
-
-        public function displayCart()
-        {
-            // addons is array
-            foreach ($this->items as $item) {
-            echo $item->quantity . ' ';
-            echo $item->name . ' $' . $item->price . '';
-            echo ' <br/> Add Ons: ';
-            // implode array (array to string) and add $1.50 to each
-            echo implode(', ', $item->addon) . ' $' . number_format(count($item->addon) * 1.50, 2) ;
-            // if no addon
-            if (empty($item->addon)) {
-                echo ' None';
-            }
-
-            echo '<br>';
-            }
-        }
-
-        public function displaySubtotal()
-        {
-             $this->subtotal();
-        }
-    }
+    
 
     //if cart is not empty display cart
   if (!empty($cart)) {
