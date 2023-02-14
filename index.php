@@ -83,6 +83,12 @@ $items = new Item(
 );
 $menuItems[] = $items;
 
+$items = new Item(
+    3,
+    'Evergreen Bowl',
+    'Rosted Sweet Potato, Organic Tofu Cucumber, Sweet onion, Rosted Corn, Rosted Sesame Sauce, Edmame, Sesame Seeds',
+    15.95
+
 ?>
 
     
