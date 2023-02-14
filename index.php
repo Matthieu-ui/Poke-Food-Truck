@@ -133,6 +133,10 @@ $menuItems[] = $items;
                 <input type="checkbox" name="addon-<?= $key ?>[]" value="onion" <?php if (isset($_POST['addon-' . $key]) && in_array('onion', $_POST['addon-' . $key])) {
                     echo 'checked="checked"';
                 }?>>
+                <label for="addon">Add Chicken</label>
+                <input type="checkbox" name="addon-<?= $key ?>[]" value="onion" <?php if (isset($_POST['addon-' . $key]) && in_array('rice', $_POST['addon-' . $key])) {
+                    echo 'checked="checked"';
+                }?>>
                 <label for="addon">Add Onions</label>
             </div>     
         </div>
