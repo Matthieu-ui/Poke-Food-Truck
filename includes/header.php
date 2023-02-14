@@ -8,4 +8,4 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
+<body style="background-image: url('./img/waves.jpg');">
