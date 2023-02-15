@@ -1,6 +1,8 @@
 # IT262 - *Food Truck*
 
-Submitted by: **Isaac Jimenez, Mahlet Birhanu, Matthieu Felker**
+Submitted by: **Isaac Jimenez, Mahlet Birhanu, Matthieu Felker**  
+
+[Web App](https://www.project-isaac.com/it262php/Poke-Food-Truck/index.php)
 
 ## Required Features
 
