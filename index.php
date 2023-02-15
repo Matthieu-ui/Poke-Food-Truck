@@ -4,7 +4,7 @@ include 'classes/item.php';
 include 'classes/cart.php';
 include 'includes/data.php';
 include 'includes/header.php';
-include 'includes/footer.php';
+
 
 /*
 Need to figure out
@@ -114,14 +114,15 @@ new TO DOO
 ) {
     echo 'checked="checked"';
 } ?>>
-                <input type="checkbox" name="addon-<?= $key ?>[]" value="onion" <?php if (isset($_POST['addon-' . $key]) && in_array('onion', $_POST['addon-' . $key])) {
+                <label for="addon">Add Onions</label>
+                </div>
+
+                <div>
+                
+                <input type="checkbox" name="addon-<?= $key ?>[]" value="chicken" <?php if (isset($_POST['addon-' . $key]) && in_array('rice', $_POST['addon-' . $key])) {
                     echo 'checked="checked"';
                 }?>>
                 <label for="addon">Add Chicken</label>
-                <input type="checkbox" name="addon-<?= $key ?>[]" value="onion" <?php if (isset($_POST['addon-' . $key]) && in_array('rice', $_POST['addon-' . $key])) {
-                    echo 'checked="checked"';
-                }?>>
-                <label for="addon">Add Onions</label>
                 </div>
                 </div>
             </div>     
@@ -177,7 +178,8 @@ new TO DOO
     echo '</div>';
 } else {
     echo '<div class="mt-8 bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">Your cart is empty!</div>';
-}
+} 
+include 'includes/footer.php';
 ?>
 
 </body>
