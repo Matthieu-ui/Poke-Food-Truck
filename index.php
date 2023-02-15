@@ -119,10 +119,10 @@ new TO DOO
 
                 <div>
                 
-                <input type="checkbox" name="addon-<?= $key ?>[]" value="chicken" <?php if (isset($_POST['addon-' . $key]) && in_array('rice', $_POST['addon-' . $key])) {
+                <input type="checkbox" name="addon-<?= $key ?>[]" value="tofu" <?php if (isset($_POST['addon-' . $key]) && in_array('tofu', $_POST['addon-' . $key])) {
                     echo 'checked="checked"';
                 }?>>
-                <label for="addon">Add Chicken</label>
+                <label for="addon">Add Tofu</label>
                 </div>
                 </div>
             </div>     
