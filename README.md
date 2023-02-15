@@ -4,6 +4,8 @@ Submitted by: **Isaac Jimenez, Mahlet Birhanu, Matthieu Felker**
 
 [Web App](https://www.project-isaac.com/it262php/Poke-Food-Truck/index.php)
 
+Art by Macrovector / Freepik
+
 ## Required Features
 
 The following **required** functionality is completed:
